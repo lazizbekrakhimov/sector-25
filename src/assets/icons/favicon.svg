@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <!-- Background -->
+  <rect width="32" height="32" fill="#161616"/>
+
+  <!-- Top red bar -->
+  <rect x="0" y="0" width="32" height="3" fill="#8b1e1e"/>
+
+  <!-- Bottom gold bar -->
+  <rect x="0" y="29" width="32" height="3" fill="#d4a017"/>
+
+  <!-- Left black sidebar accent -->
+  <rect x="0" y="3" width="5" height="26" fill="#0d0d0d"/>
+  <rect x="4" y="3" width="1" height="26" fill="#8b1e1e" opacity="0.6"/>
+
+  <!-- Main cream panel -->
+  <rect x="5" y="3" width="27" height="26" fill="#c7c0b1"/>
+
+  <!-- Letter S bold -->
+  <text x="9" y="24" font-family="serif" font-weight="900" font-size="20" fill="#1a1a1a" letter-spacing="-1">S</text>
+
+  <!-- Small "25" -->
+  <text x="20" y="14" font-family="monospace" font-weight="700" font-size="7" fill="#8b1e1e">25</text>
+
+  <!-- Decorative bottom line inside card -->
+  <rect x="5" y="26" width="27" height="1" fill="#1a1a1a" opacity="0.15"/>
+</svg>

@@ -19,7 +19,7 @@ const Register: React.FC = () => {
   function handleSubmit(evt: SubmitEvent<HTMLFormElement>) {
     setLoading(true);
     evt.preventDefault();
-    const data:RegisterDataInterface = {
+    const data: RegisterDataInterface = {
       name: evt.target.fullname.value,
       email: evt.target.email.value,
       password: evt.target.password.value,
@@ -34,8 +34,9 @@ const Register: React.FC = () => {
       <div className="absolute top-0 left-0 w-full h-2.5 bg-[#8b1e1e]" />
       <div className="absolute bottom-0 right-0 w-full h-2.5 bg-[#d4a017]" />
 
-      <div className="relative w-full max-w-xl bg-[#c7c0b1] border border-black flex">
-
+      <div className="sector-boot relative w-full max-w-xl bg-[#c7c0b1] border border-black flex">
+        <div className="crt-sweep-line" />
+        <div className="crt-static" />
         <div className="w-20 bg-black text-[#c7c0b1] flex items-center justify-center relative">
           <span className="-rotate-90 text-[9px] tracking-[0.4em] uppercase font-bold">
             Registration Node 25
@@ -47,10 +48,10 @@ const Register: React.FC = () => {
           <div className="absolute top-2 right-8 text-[80px] font-black opacity-[0.04] select-none">
             REGISTER
           </div>
+          <div className="crt-heading">
+            <AuthHeading lines={['Create', 'Identity']} /></div>
 
-          <AuthHeading lines={['Create', 'Identity']} />
-
-          <form onSubmit={handleSubmit} autoComplete="off" className="space-y-6">
+          <form onSubmit={handleSubmit} autoComplete="off" className="crt-content space-y-6">
 
             <div className="relative">
               <Label content="Full name" />
