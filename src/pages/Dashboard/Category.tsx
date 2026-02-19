@@ -1,10 +1,9 @@
-import ComingSoon from "../../components/ComingSoon";
+import { ComingSoon } from "../../components";
 
 const Category = () => {
   return (
     <ComingSoon
       sectorName="CATEGORY"
-      sectorCode="01"
       description="CATEGORY MANAGEMENT MODULE IS UNDER ACTIVE DEVELOPMENT. CLASSIFICATION SYSTEMS ARE BEING CALIBRATED."
     />
   );

@@ -5,5 +5,7 @@ import Label from "./Label";
 import Loading from "./Loading";
 import Toaste from "./Toaste";
 import AuthHeading from "./AuthHeading";
+import ComingSoon from "./ComingSoon";
+import Modal from "./Modal";
 
-export { PATH, Button, Input, Label, Loading, Toaste, AuthHeading }
+export { PATH, Button, Input, Label, Loading, Toaste, AuthHeading, ComingSoon, Modal }

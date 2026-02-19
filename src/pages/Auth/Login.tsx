@@ -1,10 +1,12 @@
-import React, { useState, type SubmitEvent } from "react";
+import React, { useContext, useState, type SubmitEvent } from "react";
 import { AuthHeading, Button, Input, Label, Loading } from "../../components";
-import { Link } from "react-router-dom";
-import { instance } from "../../hooks";
-import toast from "react-hot-toast";
+import { Link, useNavigate } from "react-router-dom";
+import { LoginFc } from "../../services";
+import { Context } from "../../context/Context";
 
 const Login: React.FC = () => {
+  const navigate = useNavigate()
+  const { setToken } = useContext(Context)
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -15,9 +17,7 @@ const Login: React.FC = () => {
       email: evt.target.email.value,
       password: evt.target.password.value,
     }
-    instance().post("/auth/login", data).then(() => {
-      toast.success(`Successfully logged in`)
-    }).catch(() => toast.error("Something went wrong")).finally(() => setLoading(false))
+    LoginFc(data, setLoading, setToken, navigate)
   }
 
   return (

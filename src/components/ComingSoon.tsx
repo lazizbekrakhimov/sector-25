@@ -2,13 +2,11 @@ import { useEffect, useState } from "react";
 
 interface ComingSoonProps {
     sectorName: string;
-    sectorCode: string;
     description?: string;
 }
 
 const ComingSoon = ({
     sectorName,
-    sectorCode,
     description = "THIS SECTOR IS CURRENTLY UNDER CONSTRUCTION. ACCESS WILL BE GRANTED UPON COMPLETION.",
 }: ComingSoonProps) => {
     const [progress, setProgress] = useState(0);
@@ -36,7 +34,7 @@ const ComingSoon = ({
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#161616] flex items-center justify-center p-4">
+        <div className="min-h-screen bg-[#161616] flex items-center justify-center">
             <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap');
 
@@ -66,6 +64,7 @@ const ComingSoon = ({
           position: relative;
           overflow: hidden;
         }
+
         .progress-bar::after {
           content: '';
           position: absolute;
@@ -78,6 +77,7 @@ const ComingSoon = ({
         .blink {
           animation: blink 1.2s step-end infinite;
         }
+          
         @keyframes blink {
           50% { opacity: 0; }
         }
@@ -89,7 +89,7 @@ const ComingSoon = ({
           color: rgba(0,0,0,0.06);
           letter-spacing: 0.05em;
           top: 50%;
-          left: 50%;
+          left: 45%;
           transform: translate(-40%, -50%);
           white-space: nowrap;
           pointer-events: none;
@@ -124,20 +124,19 @@ const ComingSoon = ({
         }
       `}</style>
 
-            <div className="flex w-full max-w-2xl" style={{ minHeight: 420 }}>
+            <div className="flex w-full max-w-2xl pb-25" style={{ minHeight: 420 }}>
                 <div
                     className="flex items-center justify-center px-3"
                     style={{
                         background: "black",
-                        minWidth: 44,
-                        borderRadius: "4px 0 0 4px",
+                        minWidth: 50,
                     }}
                 >
                     <span
                         className="side-bar mono-font text-xs tracking-widest"
                         style={{ color: "rgba(255,255,255,0.35)", fontSize: 9 }}
                     >
-                        SECTOR {sectorCode} // STANDBY MODE
+                        SECTOR {25} // STANDBY MODE
                     </span>
                 </div>
 
@@ -156,7 +155,7 @@ const ComingSoon = ({
                         className="sector-font"
                         style={{ fontSize: 13, letterSpacing: "0.25em", color: "#c0392b", marginBottom: 2 }}
                     >
-                        SECTOR {sectorCode}
+                        SECTOR {25}
                     </div>
                     <div className="sector-font" style={{ fontSize: 64, lineHeight: 0.95, color: "#1a1a1a", marginBottom: 4 }}>
                         {sectorName}

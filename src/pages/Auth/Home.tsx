@@ -1,13 +1,13 @@
-import ComingSoon from "../../components/ComingSoon";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { PATH } from "../../components";
 
 const Home = () => {
-  return (
-    <ComingSoon
-      sectorName="DASHBOARD"
-      sectorCode="00"
-      description="MAIN OPERATIONS HUB IS BEING ASSEMBLED. ALL SYSTEMS WILL BE ONLINE SHORTLY."
-    />
-  );
+  const navigate = useNavigate()
+  useEffect(() => {
+    navigate(PATH.login)
+  })
+  return ""
 };
 
 export default Home;
