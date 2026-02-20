@@ -40,7 +40,7 @@ const Header = () => {
           </Button>
 
           <div className="relative pt-1">
-            <span className="absolute -top-3 -left-2 text-7xl font-bold uppercase text-[#161616]/35 tracking-wide select-none pointer-events-none">
+            <span className="sector-font absolute -top-2 -left-2 text-7xl font-bold uppercase text-[#161616]/35 tracking-widest select-none pointer-events-none">
               {pageName}
             </span>
 
@@ -48,7 +48,7 @@ const Header = () => {
               Sector 25
             </p>
 
-            <h2 className="text-lg uppercase font-semibold text-[#c7c0b1] tracking-wider relative z-10">
+            <h2 className="sector-font text-[20px] uppercase font-64 text-[#c7c0b1] tracking-[0.25em] relative z-10">
               {pageName}
             </h2>
           </div>

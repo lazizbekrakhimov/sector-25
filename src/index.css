@@ -1,10 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap');
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Bebas+Neue&display=swap');
+.sector-font {
+  font-family: 'Bebas Neue', sans-serif;
+}
 
+.mono-font {
+  font-family: 'Space Mono', monospace;
+}
 
 body {
   overflow: hidden;
+  user-select: none;
+  background-color: #161616;
 }
 
 .sitebar-bg {
@@ -36,8 +44,15 @@ body {
 }
 
 @keyframes scanY {
-  0%   { top: 20%; opacity: 0.3; }
-  100% { top: 85%; opacity: 0.3; }
+  0% {
+    top: 20%;
+    opacity: 0.3;
+  }
+
+  100% {
+    top: 85%;
+    opacity: 0.3;
+  }
 }
 
 .scan-line-x {
@@ -53,8 +68,15 @@ body {
 }
 
 @keyframes scanX {
-  0%   { left: 20%; opacity: 0.3; }
-  100% { left: 80%; opacity: 0.3; }
+  0% {
+    left: 20%;
+    opacity: 0.3;
+  }
+
+  100% {
+    left: 80%;
+    opacity: 0.3;
+  }
 }
 
 ::-webkit-scrollbar {
@@ -74,6 +96,108 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #8b1e1e;
+}
+
+.card-bg {
+  background-color: #c7c0b1;
+  background-image:
+    repeating-linear-gradient(0deg,
+      transparent,
+      transparent 39px,
+      rgba(0, 0, 0, 0.04) 39px,
+      rgba(0, 0, 0, 0.04) 40px);
+}
+
+.side-bar {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+}
+
+.progress-bar {
+  background: #1a1a1a;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--progress);
+  background: #c0392b;
+  transition: width 0.05s linear;
+}
+
+.blink {
+  animation: blink 1.2s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.ghost-text {
+  position: absolute;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 9rem;
+  color: rgba(0, 0, 0, 0.06);
+  letter-spacing: 0.05em;
+  top: 50%;
+  left: 45%;
+  transform: translate(-40%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+}
+
+.scan-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: rgba(192, 57, 43, 0.3);
+  animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.status-cell {
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 8px 14px;
+  text-align: center;
 }
 
 @keyframes tv-flash {
