@@ -14,10 +14,10 @@ const NotFound = () => {
   }, [])
 
   return (
-    <div className="min-h-screen bg-[#161616] flex items-center justify-center font-mono">
-      <div className="w-10.5 h-107.5 bg-black flex items-center justify-center shrink-0">
+    <div className="min-h-screen pb-18 bg-[#161616] flex items-center justify-center font-mono">
+      <div className="w-15 h-124 bg-black flex items-center justify-center shrink-0">
         <span
-          className="text-[#c7c0b1] font-bold text-[9px] tracking-[0.15em] uppercase opacity-70"
+          className="text-[rgba(255,255,255,0.35)] pr-1 font-bold text-[11px] tracking-widest uppercase opacity-70"
           style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
         >
           ERROR // SECTOR 25

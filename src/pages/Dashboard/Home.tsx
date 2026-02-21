@@ -56,7 +56,7 @@ const Home = () => {
   return (
     <div className="h-full max-h-[85vh] w-full bg-[#161616] flex items-center justify-center overflow-hidden">
 
-      <div className="w-full max-w-4xl px-6" style={{ transform: mounted ? "translateY(0)" : "translateY(24px)", opacity: mounted ? 1 : 0, transition: "transform 1.1s cubic-bezier(0.16,1,0.3,1), opacity 0.9s ease" }}>
+      <div className="w-full max-w-4xl pt-6 px-6" style={{ transform: mounted ? "translateY(0)" : "translateY(24px)", opacity: mounted ? 1 : 0, transition: "transform 1.1s cubic-bezier(0.16,1,0.3,1), opacity 0.9s ease" }}>
 
         <div className="bg-[#c7c0b1] border-2 border-[#a8a298] shadow-[6px_6px_0_#8a8478,12px_12px_0_rgba(0,0,0,0.4)]">
 
@@ -170,7 +170,7 @@ const Home = () => {
                           >
                             {s.value
                               ? s.value
-                              : <span className="text-xs tracking-normal"><Loading /></span>
+                              : <span className="text-lg tracking-normal"><Loading /></span>
                             }
                           </p>
                         </div>
@@ -184,17 +184,17 @@ const Home = () => {
           </div>
 
           <div className="flex items-center justify-between px-6 py-3 border-t-2 border-[#a8a298]">
-            <div className="flex flex-col gap-1">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="w-10 h-px bg-[rgba(60,48,28,0.25)]" />
+            <div className="flex flex-col gap-px">
+              {[...Array(13)].map((_, i) => (
+                <div key={i} className="w-20 h-0.5 bg-[rgba(60,48,28,0.25)]" />
               ))}
             </div>
-            <p className="sector-font text-sm tracking-[12px] text-[rgba(60,48,28,0.45)] uppercase">
+            <p className="sector-font text-lg py-2 tracking-[12px] text-[rgba(60,48,28,0.45)] uppercase">
               Sector TV
             </p>
-            <div className="flex flex-col gap-1">
-              {[...Array(4)].map((_, i) => (
-                <div key={i} className="w-10 h-px bg-[rgba(60,48,28,0.25)]" />
+            <div className="flex flex-col gap-px">
+              {[...Array(13)].map((_, i) => (
+                <div key={i} className="w-20 h-0.5 bg-[rgba(60,48,28,0.25)]" />
               ))}
             </div>
           </div>
