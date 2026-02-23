@@ -114,6 +114,18 @@ body {
   background: #8b1e1e;
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.shadow-box:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
+}
+
 .card-bg {
   background-color: #c7c0b1;
   background-image:

@@ -23,7 +23,7 @@ const SearchInput: FC<SearchInputType> = ({  setValue, setLoading, value}) => {
                 type="text"
                 name="search"
                 placeholder="SEARCH"
-                className=" bg-transparent border-b-2 border-[#c7c0b1] text-[#c7c0b1] placeholder:text-neutral-600 pl-10 py-3 px-2 w-full outline-none tracking-[3px] focus:border-[#a61e1e] transition-all duration-300 "
+                className=" bg-transparent border-b-2 border-neutral-500 hover:border-[#c7c0b1] text-[#c7c0b1] placeholder:text-neutral-600 pl-10 px-2 py-2.5 w-full outline-none tracking-[3px] focus:border-[#a61e1e] transition-all duration-300 "
             />
         </div>
     );

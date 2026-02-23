@@ -28,11 +28,11 @@ const Header = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-40 h-20 bg-black border-transparent flex items-center justify-between px-10 pt-2 overflow-hidden">
+      <header className="sticky top-0 z-40 h-20 bg-black border-transparent flex items-center justify-between px-10.5 pt-2 overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-1.5 bg-[#8b1e1e] z-30" />
         <div className="flex items-center gap-6 relative z-10">
           <Button
-            onclick={() => navigate(-1)}
+            onClick={() => navigate(-1)}
             type="button"
             extraClass="!flex !items-center !gap-2 !px-2.5 !py-2.5 !mt-0 !w-auto !text-sm hover:!text-[#c7c0b1] !font-medium !bg-black hover:!bg-[#8b1e1e]"
           >
@@ -48,14 +48,14 @@ const Header = () => {
               Sector 25
             </p>
 
-            <h2 className="sector-font text-[20px] uppercase font-64 text-[#c7c0b1] tracking-[0.25em] relative z-10">
+            <h2 className="sector-font text-[20px] uppercase font-64 text-[#c7c0b1] tracking-[0.20em] relative z-10">
               {pageName}
             </h2>
           </div>
         </div>
 
         <Button
-          onclick={() => setLogOutModal(true)}
+          onClick={() => setLogOutModal(true)}
           type="button"
           extraClass="!flex !items-center !gap-2 !px-4 !py-2 !mt-0 !w-auto !text-sm !font-medium hover:!bg-black relative z-10"
         >
@@ -71,15 +71,15 @@ const Header = () => {
       >
         <div className="flex gap-4 justify-center">
           <Button
-            onclick={() => setLogOutModal(false)}
+            onClick={() => setLogOutModal(false)}
             type="button"
-            extraClass="flex-1 mt-0 flex items-center justify-center gap-2 bg-[#161616] hover:!bg-[#8b1e1e] hover:!text-[#c7c0b1]"
+            extraClass="flex-1 mt-0 flex items-center justify-center gap-2 bg-black border-black hover:!bg-[#161616] hover:!text-[#8b1e1e]"
           >
             Cancel
           </Button>
 
           <Button
-            onclick={handleLogOut}
+            onClick={handleLogOut}
             type="button"
             extraClass="flex-1 mt-0 flex items-center justify-center gap-3 hover:!bg-[#161616]"
           >

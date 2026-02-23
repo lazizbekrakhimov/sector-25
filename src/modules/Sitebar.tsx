@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import { PATH } from "../components"
 
 const Sitebar = () => {
@@ -20,10 +20,6 @@ const Sitebar = () => {
       <div className=" bg-black h-20 pt-2 flex flex-row items-center justify-center border-b border-neutral-800 relative z-10">
         <div className="scan-line-y"></div>
         <div className="scan-line-x"></div>
-        <Link to={PATH.home}>
-          <img className="mr-5 mb-1" src="src/assets/icons/favicon.svg" alt="" width={40} height={40} />
-        </Link>
-
         <div className="flex flex-col items-center justify-center">
           <p className="sitebar-header-bg text-[10px] uppercase tracking-[0.35em] text-neutral-400 font-mono">
             CONTROL UNIT
@@ -36,7 +32,7 @@ const Sitebar = () => {
 
       </div>
 
-      <nav className="sector-font flex-1 -right-5 px-14 py-12 space-y-8 text-[24px] font-64 tracking-[0.25em] uppercase relative z-10">
+      <nav className="sector-font flex-1 -right-5 px-14 py-12 space-y-8 text-[24px] font-64 tracking-[0.20em] uppercase relative z-10">
         {links.map(link => (
           <NavLink key={link.name} to={link.path} className={({ isActive }) => `relative block transition-all duration-300 ${isActive ? "text-[#c7c0b1]" : "text-neutral-500 hover:text-[#c7c0b1]"}`}>
             {({ isActive }) => (

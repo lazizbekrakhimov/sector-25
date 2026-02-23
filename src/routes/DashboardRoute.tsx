@@ -21,7 +21,7 @@ const DashboardRoute = () => {
       <div className="absolute top-0 left-0 w-full h-1.5 bg-[#8b1e1e] z-30" />
       <div className="absolute bottom-0 right-0 w-full h-1.5 bg-[#d4a017] z-30" />
       <Sitebar />
-      <div className="w-[78%] overflow-y-auto ">
+      <div className="w-[90%] overflow-y-auto ">
         <Header />
         <Routes>{routeList.map(item => <Route key={item.id} path={item.path} element={item.element} />)}</Routes>
       </div>

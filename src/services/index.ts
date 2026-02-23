@@ -21,3 +21,36 @@ export const LoginFc = (data: { email: string, password: string }, setLoading: D
         }, 2000)
     }).catch(() => toast.error("Something went wrong")).finally(() => setLoading(false))
 }
+
+export const getById = (URL: string, setValue: Dispatch<SetStateAction<any>>, setVisible: Dispatch<any>) => {
+    instance().get(URL).then(res => {
+        setValue(res.data);
+        const t = setTimeout(() => setVisible(true), 30);
+        return () => clearTimeout(t);
+    })
+}
+
+export const DeleteFn = (URL: string, setLoading: Dispatch<SetStateAction<boolean>>, setDelModal: Dispatch<SetStateAction<boolean>>, toastTitle: string, navigate: NavigateFunction) => {
+    instance().delete(URL).then(() => {
+        setLoading(false)
+        setDelModal(false)
+        toast.success(toastTitle)
+        setTimeout(() => navigate(-1), 1000)
+    })
+}
+
+export const CrudFn = ( id: string | undefined, URL: string, data: any, setLoading: Dispatch<SetStateAction<boolean>>, navigate: NavigateFunction, toastTitle: string) => {
+    const request = id
+        ? instance().put(`${URL}`, data)
+        : instance().post(`${URL}`, data);
+    request
+        .then(() => {
+            toast.success(toastTitle);
+            setTimeout(() => navigate(-1), 1000);
+        })
+        .catch((err) => {
+            console.log("SERVER ERROR:", err.response?.data);
+            toast.error("Bad request - check console");
+        })
+        .finally(() => setLoading(false));
+};

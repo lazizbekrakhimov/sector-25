@@ -1,10 +1,6 @@
 import { useState } from "react"
 import type { ProductType } from "../@types"
-import CardButton from "./CardButton"
-import { EyeIcon, TrashIcon } from "lucide-react"
-import { EditIcon } from "../assets/icons"
 import { useNavigate } from "react-router-dom"
-
 
 interface ProductCardProps {
   item: ProductType
@@ -32,7 +28,7 @@ const ProductCard = ({ item }: ProductCardProps) => {
           {hasImg ? (
             <img src={cover} alt={item.title} onError={() => setImgErr(true)} loading="lazy" className={`w-full h-full object-cover block transition-transform duration-500 ${hovered ? "scale-[1.04]" : "scale-100"}`} />
           ) : (
-            <div className="w-full h-full bg-[#b5ad9e] flex items-center justify-center relative">
+            <div className="w-full h-full flex items-center justify-center relative">
               <svg className="absolute inset-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
                 <defs>
                   <pattern id={`g-${item.id}`} width="24" height="24" patternUnits="userSpaceOnUse">
@@ -41,8 +37,8 @@ const ProductCard = ({ item }: ProductCardProps) => {
                 </defs>
                 <rect width="100%" height="100%" fill={`url(#g-${item.id})`} />
               </svg>
-              <span className="relative z-10 font-black text-[48px] text-[#1a1a1a]/[0.07] tracking-[-0.04em] select-none mono-font">
-                S25
+              <span className="relative z-10 font-black text-[28px] text-[#1a1a1a]/9 tracking-[-0.03em] select-none mono-font">
+                NO IMAGE
               </span>
             </div>
           )}
@@ -57,13 +53,13 @@ const ProductCard = ({ item }: ProductCardProps) => {
           </div>
 
           <div className="absolute bottom-2 right-2 bg-[#1a1a1a] flex px-2 py-1.25 z-10">
-            <span className="text-[#c7c0b1] text-[13px] font-black tracking-[-0.01em] mono-font">
+            <span className="text-[#c7c0b1] text-[14px] font-black tracking-[-0.01em] mono-font">
               ${item.price.toLocaleString("en-US", { minimumFractionDigits: 2 })}
             </span>
           </div>
         </div>
 
-        <div className="flex flex-col flex-1 p-3.5 gap-2">
+        <div className="flex flex-col flex-1 p-3.5 gap-3">
           <h3 className="font-black text-[15px] text-[#1a1a1a] uppercase tracking-[0.05em] leading-[1.45] m-0 line-clamp-2 min-h-8.75 mono-font">
             {item.title}
           </h3>
@@ -75,26 +71,12 @@ const ProductCard = ({ item }: ProductCardProps) => {
           <div className="h-px bg-[#1a1a1a]/15 shrink-0" />
 
           <div className="flex items-center justify-between gap-2">
-            <span className="text-[9px] tracking-[0.18em] uppercase text-[#1a1a1a]/40 border border-[#1a1a1a]/15 bg-[#1a1a1a]/4 px-1.5 py-0.5 truncate max-w-[65%] block">
+            <span className="text-[9px] tracking-[0.18em] uppercase text-[#1a1a1a]/40 border border-[#1a1a1a]/15 bg-[#1a1a1a]/4 px-1.5 py-0.5 truncate max-w-[80%] block">
               {item.slug}
             </span>
-            <span className="text-[9px] font-mono text-[#1a1a1a]/25 tracking-widest shrink-0">
+            <span className="text-[10px] font-mono text-[#1a1a1a]/25 tracking-widest shrink-0">
               #{String(item.id).padStart(4, "0")}
             </span>
-          </div>
-
-          <div className="flex gap-1.5 pt-0.5 shrink-0">
-            <button className="flex-1 h-9 flex items-center justify-center gap-1.5 bg-[#1a1a1a] hover:bg-[#8b1a1a] text-[#c7c0b1] text-[12px] font-bold tracking-[0.3em] uppercase border-2 border-[#1a1a1a] hover:border-[#8b1a1a] transition-colors duration-150">
-              <EditIcon /> EDIT
-            </button>
-            
-            <CardButton>
-              <EyeIcon />
-            </CardButton>
-
-            <CardButton>
-              <TrashIcon />
-            </CardButton>
           </div>
         </div>
       </div>
