@@ -1,25 +1,11 @@
-import { useEffect, useState } from 'react'
-
-const useGlitch = (interval = 3000, duration = 150) => {
-  const [glitch, setGlitch] = useState(false)
-
-  useEffect(() => {
-    const id = setInterval(() => {
-      setGlitch(true)
-      setTimeout(() => setGlitch(false), duration)
-    }, interval)
-    return () => clearInterval(id)
-  }, [interval, duration])
-
-  return glitch
-}
+import UseGlitch from "./UseGlitch"
 
 interface AuthHeadingProps {
   lines: [string, string]
 }
 
 const AuthHeading = ({ lines }: AuthHeadingProps) => {
-  const glitch = useGlitch()
+  const glitch = UseGlitch()
 
   return (
     <div className="mb-10">

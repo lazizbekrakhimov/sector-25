@@ -10,9 +10,9 @@ import Modal from "./Modal";
 import SearchInput from "./SearchInput";
 import Select from "./Select";
 import ProductCard from "./ProductCard";
-import CardButton from "./CardButton";
 import LedgerLayout from "./LedgerLayout";
 import fadeUp from "./FadeUp";
 import ShadowBox from "./ShadowBox";
+import TextArea from "./Textarea";
 
-export { PATH, Button, Input, Label, Loading, Toaste, AuthHeading, ComingSoon, Modal, SearchInput, Select, ProductCard, CardButton, LedgerLayout, fadeUp, ShadowBox }
+export { PATH, Button, Input, Label, Loading, Toaste, AuthHeading, ComingSoon, Modal, SearchInput, Select, ProductCard, LedgerLayout, fadeUp, ShadowBox, TextArea }

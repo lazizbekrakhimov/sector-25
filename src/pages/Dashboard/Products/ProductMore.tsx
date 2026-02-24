@@ -62,8 +62,8 @@ const ProductMore = () => {
 
                     <div style={fadeUp(240, visible)}>
                         <div className="relative w-full pr-1.5 pb-1.5 group">
-                            <div className="absolute top-1.5 left-1.5 right-0 bottom-0 bg-[#1a1a1a] z-0" />
-                            <div className="relative z-10 border-2 border-[#1a1a1a] overflow-hidden bg-[#c7c0b1]">
+                            <div className="absolute top-1.5 left-1.5 right-0 bottom-0 bg-[#1a1a1a] z-0 transition-all duration-150 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+                            <div className="relative z-10 border-2 border-[#1a1a1a] overflow-hidden bg-[#c7c0b1] transition-all duration-150 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
                                 <div className="relative w-full h-100 overflow-hidden border-b-2 border-[#1a1a1a]">
                                     <img src={cover} alt={moreData.title} className="w-full h-full object-cover block" />
                                     <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
@@ -73,9 +73,10 @@ const ProductMore = () => {
 
                         <div className="flex gap-2 mt-4">
                             {moreData.images?.map((src, i) => (
-                                <button key={i} onClick={() => setActiveImg(i)} className="relative w-25 h-25 pr-0.75 pb-0.75 cursor-pointer">
-                                    <div className={`absolute top-0.75 left-0.75 right-0 bottom-0 bg-[#1a1a1a] z-0 transition-opacity ${activeImg === i ? "opacity-100" : "opacity-40"}`} />
-                                    <div className={`relative z-10 border-2 overflow-hidden transition-all w-full h-full ${activeImg === i ? "border-[#1a1a1a]" : "border-[#1a1a1a]/30 opacity-50 hover:opacity-80"}`}>
+                                <button key={i} onClick={() => setActiveImg(i)} className="relative w-25 h-25 pr-0.75 pb-0.75 cursor-pointer group">
+                                    <div className={`absolute top-0.75 left-0.75 right-0 bottom-0 bg-[#1a1a1a] z-0 transition-all duration-150 group-hover:translate-x-px group-hover:translate-y-0.5 ${activeImg === i ? "opacity-100" : "opacity-40"}`} />
+                                    <div className={`relative z-10 border-2 overflow-hidden transition-all w-full h-full group-hover:-translate-x-px group-hover:-translate-y-0.5
+                                        ${activeImg === i ? "border-[#1a1a1a]" : "border-[#1a1a1a]/30 opacity-50 hover:opacity-80"}`}>
                                         <img src={src} alt={moreData.title} className="w-full h-full object-cover" />
                                     </div>
                                 </button>
@@ -85,9 +86,9 @@ const ProductMore = () => {
 
                     <div className="flex flex-col gap-5">
 
-                        <div className="relative w-full pr-1.5 pb-1.5" style={fadeUp(320, visible)}>
-                            <div className="absolute top-1.5 left-1.5 right-0 bottom-0 bg-[#1a1a1a] z-0" />
-                            <div className="relative z-10 border-2 border-[#1a1a1a] bg-[#c7c0b1] p-4">
+                        <div className="relative w-full pr-1.5 pb-1.5 group" style={fadeUp(320, visible)}>
+                            <div className="absolute top-1.5 left-1.5 right-0 bottom-0 bg-[#1a1a1a] z-0 transition-all duration-150 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+                            <div className="relative z-10 border-2 border-[#1a1a1a] bg-[#c7c0b1] p-4 transition-all duration-150 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
                                 <h2 className="font-black text-[22px] text-[#1a1a1a] uppercase tracking-[0.05em] leading-[1.3] mono-font">
                                     {moreData.title}
                                 </h2>
@@ -103,17 +104,17 @@ const ProductMore = () => {
                             </div>
                         </div>
 
-                        <div className="relative w-full pr-1.5 pb-1.5" style={fadeUp(400, visible)}>
-                            <div className="absolute top-1.5 left-1.5 right-0 bottom-0 bg-[#1a1a1a] z-0" />
-                            <div className="relative z-10 border-2 border-[#1a1a1a] bg-[#c7c0b1] p-4">
+                        <div className="relative w-full pr-1.5 pb-1.5 group" style={fadeUp(400, visible)}>
+                            <div className="absolute top-1.5 left-1.5 right-0 bottom-0 bg-[#1a1a1a] z-0 transition-all duration-150 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+                            <div className="relative z-10 border-2 border-[#1a1a1a] bg-[#c7c0b1] p-4 transition-all duration-150 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
                                 <p className="text-[13px] tracking-[0.3em] text-[#1a1a1a]/40 uppercase font-bold mb-2">DESCRIPTION</p>
                                 <p className="text-[13px] text-[#1a1a1a]/60 leading-[1.7]">{moreData.description}</p>
                             </div>
                         </div>
 
-                        <div className="relative w-full pr-1.5 pb-1.5" style={fadeUp(480, visible)}>
-                            <div className="absolute top-1.5 left-1.5 right-0 bottom-0 bg-[#1a1a1a] z-0" />
-                            <div className="relative z-10 border-2 border-[#1a1a1a] bg-[#c7c0b1] p-4">
+                        <div className="relative w-full pr-1.5 pb-1.5 group" style={fadeUp(480, visible)}>
+                            <div className="absolute top-1.5 left-1.5 right-0 bottom-0 bg-[#1a1a1a] z-0 transition-all duration-150 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+                            <div className="relative z-10 border-2 border-[#1a1a1a] bg-[#c7c0b1] p-4 transition-all duration-150 group-hover:-translate-x-0.5 group-hover:-translate-y-0.5">
                                 <p className="text-[14px] tracking-[0.3em] text-[#1a1a1a]/40 uppercase font-bold mb-3">CATEGORY</p>
                                 <div className="absolute top-2 right-3 leading-9 z-10">
                                     <p className="text-[14px] flex justify-end tracking-[0.3em] text-[#1a1a1a]/40 uppercase font-bold">PRICE</p>

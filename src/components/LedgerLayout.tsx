@@ -1,4 +1,5 @@
 import React from "react";
+import UseGlitch from "./UseGlitch";
 
 interface LedgerLayoutProps {
     title: string;
@@ -64,7 +65,14 @@ const LedgerLayout = ({
                         <p className="text-[9px] tracking-[0.35em] text-[#8b1a1a] uppercase mb-2 font-bold">
                             SECTOR 25 — INVENTORY LEDGER
                         </p>
-                        <h1 className="text-[40px] font-black text-[#1a1a1a] uppercase leading-none tracking-[0.05em] sector-font">
+                        <h1
+                            className="text-[40px] font-black text-[#1a1a1a] uppercase leading-none tracking-[0.05em] sector-font transition-all duration-75"
+                            style={
+                                UseGlitch()
+                                    ? { textShadow: '2px 0 #1a1a1a, -2px 0 #b03a2e', transform: 'skewX(-4deg)' }
+                                    : {}
+                            }
+                        >
                             {title}
                         </h1>
                         <div className="w-14 h-0.75 bg-[#1a1a1a] mt-2.5" />

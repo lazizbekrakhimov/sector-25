@@ -228,39 +228,6 @@ input[type=number]::-webkit-outer-spin-button {
   text-align: center;
 }
 
-@keyframes tv-flash {
-  0% {
-    opacity: 0;
-  }
-
-  5% {
-    opacity: 0.55;
-    background: rgba(255, 255, 255, 0.9);
-  }
-
-  12% {
-    opacity: 0.08;
-  }
-
-  18% {
-    opacity: 0.45;
-    background: rgba(255, 252, 240, 0.85);
-  }
-
-  28% {
-    opacity: 0.18;
-    background: rgba(255, 248, 220, 0.6);
-  }
-
-  50% {
-    opacity: 0.05;
-  }
-
-  100% {
-    opacity: 0;
-  }
-}
-
 @keyframes crt-power-on {
   0% {
     opacity: 0;
@@ -610,7 +577,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-@keyframes tv-flash-out {
+@keyframes -out {
   0% {
     opacity: 0;
   }
@@ -629,14 +596,8 @@ input[type=number]::-webkit-outer-spin-button {
   }
 }
 
-.crt-flash {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  background: white;
-  animation: tv-flash 1.0s ease-out both;
-}
+
+
 
 .sector-boot {
   position: relative;

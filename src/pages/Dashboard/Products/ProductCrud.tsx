@@ -1,6 +1,6 @@
 import { useState, useEffect, type SubmitEvent } from "react";
 import { Plus } from "lucide-react";
-import { Button, fadeUp, Input, Label, LedgerLayout, Loading, Select, ShadowBox } from "../../../components";
+import { Button, fadeUp, Input, Label, LedgerLayout, Loading, Select, ShadowBox, TextArea } from "../../../components";
 import { useNavigate, useParams } from "react-router-dom";
 import { instance } from "../../../hooks";
 import { CrudFn } from "../../../services";
@@ -64,7 +64,7 @@ const ProductCrud = () => {
                         <ShadowBox style={fadeUp(320, visible)}>
                             <Label extraClass="mono-font  tracking-[0.3em] uppercase font-bold pb-1 mt-7" content="Unit Price" />
                             <div className="flex items-center gap-2">
-                                <span className="font-black text-[24px] mt-1 text-[#1a1a1a]/20 mono-font">$</span>
+                                <span className="font-black text-[24px] mt-1 text-[#1a1a1a] mono-font">$</span>
                                 <Input value={price} setValue={setPrice} extraClass="mono-font text-[15px] font-normal mt-2" type="number" placeholder="0.00" name={"number"} />
                             </div>
                         </ShadowBox>
@@ -79,14 +79,14 @@ const ProductCrud = () => {
 
                     <div className="flex flex-col gap-5">
                         <ShadowBox style={fadeUp(240, visible)}>
-                            <Label extraClass="mono-font  tracking-[0.3em] uppercase font-bold pb-1 mt-7" content={"Description"} />
-                            <Input
+                            <Label extraClass="mono-font tracking-[0.3em] uppercase font-bold pb-1 mt-7" content={"Description"} />
+                            <TextArea
                                 value={description}
                                 setValue={setDescription}
-                                name={"description"}
-                                type={"text"}
-                                extraClass="mono-font text-[15px] font-normal mt-2"
+                                name="description"
                                 placeholder="Write a product description..."
+                                rows={6}
+                                extraClass="mono-font text-[15px] font-normal mt-2"
                             />
                         </ShadowBox>
 

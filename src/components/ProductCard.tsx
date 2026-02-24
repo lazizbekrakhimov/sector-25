@@ -21,7 +21,7 @@ const ProductCard = ({ item }: ProductCardProps) => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      <div className="absolute top-1.25 left-1.25 right-0 bottom-0 bg-[#1a1a1a] z-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+      <div className="absolute top-1.5 left-1.5 right-0 bottom-0 bg-[#1a1a1a] z-0 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
       <div className={`relative z-10 flex flex-col bg-[#c7c0b1] border-2 border-[#1a1a1a] overflow-hidden transition-transform duration-200 ${hovered ? "-translate-x-0.5 -translate-y-0.5" : ""}`}>
 
         <div className="relative w-full h-50 overflow-hidden border-b-2 border-[#1a1a1a] shrink-0">
@@ -59,14 +59,16 @@ const ProductCard = ({ item }: ProductCardProps) => {
           </div>
         </div>
 
-        <div className="flex flex-col flex-1 p-3.5 gap-3">
-          <h3 className="font-black text-[15px] text-[#1a1a1a] uppercase tracking-[0.05em] leading-[1.45] m-0 line-clamp-2 min-h-8.75 mono-font">
-            {item.title}
-          </h3>
+        <div className="flex flex-col flex-1 p-3.5 gap-4">
+          <div className=" flex flex-col flex-1 gap-3">
+            <h3 className="font-black text-[15px] text-[#1a1a1a] uppercase tracking-[0.05em] leading-[1.45] m-0 line-clamp-2 h-11 mono-font">
+              {item.title}
+            </h3>
 
-          <p className="text-[12px] text-[#1a1a1a]/50 leading-[1.6] m-0 line-clamp-2 min-h-8.75">
-            {item.description}
-          </p>
+            <p className="text-[12px] text-[#1a1a1a]/50 leading-[1.6] m-0 line-clamp-2 h-9.5">
+              {item.description}
+            </p>
+          </div>
 
           <div className="h-px bg-[#1a1a1a]/15 shrink-0" />
 
