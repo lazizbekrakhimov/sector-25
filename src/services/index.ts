@@ -31,15 +31,23 @@ export const getById = (URL: string, setValue: Dispatch<SetStateAction<any>>, se
 }
 
 export const DeleteFn = (URL: string, setLoading: Dispatch<SetStateAction<boolean>>, setDelModal: Dispatch<SetStateAction<boolean>>, toastTitle: string, navigate: NavigateFunction) => {
-    instance().delete(URL).then(() => {
-        setLoading(false)
-        setDelModal(false)
-        toast.success(toastTitle)
-        setTimeout(() => navigate(-1), 1000)
-    })
+    instance()
+        .delete(URL)
+        .then(() => {
+            setDelModal(false)
+            toast.success(toastTitle)
+            setTimeout(() => navigate(-1), 1000)
+        })
+        .catch((err: any) => {
+            console.error(err.response?.data || err.message)
+            toast.error(err.response?.data?.message || "Delete failed")
+        })
+        .finally(() => {
+            setLoading(false)
+        })
 }
 
-export const CrudFn = ( id: string | undefined, URL: string, data: any, setLoading: Dispatch<SetStateAction<boolean>>, navigate: NavigateFunction, toastTitle: string) => {
+export const CrudFn = (id: string | undefined, URL: string, data: any, setLoading: Dispatch<SetStateAction<boolean>>, navigate: NavigateFunction, toastTitle: string) => {
     const request = id
         ? instance().put(`${URL}`, data)
         : instance().post(`${URL}`, data);

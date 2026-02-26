@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom"
 const Products = () => {
   const navigate = useNavigate()
   const [search, setSearch] = useState('')
-  const title = debounce(search, 1000)
+  const title = debounce(search, 500)
   const [categoryId, setCategoryId] = useState<string | number>("")
 
   const [loading, setLoading] = useState<boolean>(true)
@@ -50,7 +50,7 @@ const Products = () => {
               <Loading />
             </div>
           ) : products.length === 0 ? (
-            <div className="col-span-4 flex flex-col items-center justify-center py-24">
+            <div className="col-span-4 flex flex-col items-center justify-center py-23.75">
               <span className="text-[80px] font-black text-[#1a1a1a]/10 leading-none tracking-wider select-none sector-font">
                 EMPTY
               </span>

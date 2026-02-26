@@ -41,7 +41,7 @@ const ProductCrud = () => {
     return (
         <form onSubmit={handleSubmit} autoComplete="off" className="px-11 py-8">
             <div className="flex items-center justify-end mb-8 gap-5" style={fadeUp(0, visible)}>
-                <Button type="submit" extraClass="!flex !items-center !gap-2 !px-4.5 !py-1.5 !mt-0 !w-auto !text-sm !font-medium hover:!bg-[#161616] relative z-10">
+                <Button type="submit" extraClass="!flex !items-center !gap-2 !px-4.5 !py-2 !mt-0 !w-auto !text-sm !font-medium hover:!bg-[#161616] relative z-10">
                     {loading ? <Loading /> : <><Plus className="w-4 h-4" /> Save</>}
                 </Button>
             </div>

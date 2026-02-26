@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 interface LoadingProps {
-  color?: string;
   size?: number;
   speed?: number;
 }
 
-const Loading: React.FC<LoadingProps> = ({ color = "", size = 16, speed = 500 }) => {
+const Loading: React.FC<LoadingProps> = ({ size = 18, speed = 200 }) => {
   const [dots, setDots] = useState(0);
 
   useEffect(() => {
@@ -17,16 +16,14 @@ const Loading: React.FC<LoadingProps> = ({ color = "", size = 16, speed = 500 })
   }, [speed]);
 
   return (
-    <div
-      className="flex items-center justify-center font-mono uppercase tracking-[0.2em]"
-      style={{ color }}
-    >
+    <div className="flex items-center justify-center font-mono uppercase tracking-[0.2em]">
       <span
-        className="inline-block w-4 h-4 border-2 border-t-transparent border-current rounded-full animate-spin mr-2"
+        className="inline-block border-2 border-t-transparent border-current rounded-full animate-spin mr-3"
         style={{ width: size, height: size }}
-      ></span>
-      <span>
-        Loading{Array(dots).fill(".").join("")}{" "}
+      />
+      <span>Loading</span>
+      <span className="inline-block w-6 text-left">
+        {Array(dots).fill(".").join("")}
       </span>
     </div>
   );

@@ -1,4 +1,4 @@
-import type { FC, Dispatch, SetStateAction } from "react";
+import type { FC } from "react";
 
 interface InputType {
   type: "email" | "password" | "text" | "number";
@@ -6,7 +6,7 @@ interface InputType {
   extraClass?: string;
   name: string;
   value?: string;
-  setValue?: Dispatch<SetStateAction<string>>;
+  setValue?: (value: string) => void;
 }
 
 const Input: FC<InputType> = ({ type, placeholder, extraClass, name, value, setValue }) => {

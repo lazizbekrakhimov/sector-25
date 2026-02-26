@@ -30,23 +30,17 @@ const ProductMore = () => {
         DeleteFn(`/products/${id}`, setLoading, setDelModal, "Product deleted successfully!", navigate)
     }
 
-    if (!moreData) return (
-        <div className="flex items-center justify-center min-h-[60vh]">
-            <span className="text-[10px] font-mono tracking-[0.35em] text-[#1a1a1a]/30 uppercase animate-pulse">
-                <Loading />
-            </span>
-        </div>
-    );
+    if (!moreData) return "";
 
     const cover = moreData.images?.[activeImg];
 
     return (
         <div className="px-11 py-8">
             <div className="flex items-center justify-end mb-8 gap-5" style={fadeUp(0, visible)}>
-                <Button onClick={() => setDelModal(true)} type="button" extraClass="!flex !bg-black !border-black !items-center !gap-2 !px-4.5 !py-1.5 !mt-0 !w-auto !text-sm !font-medium hover:!bg-[#161616] hover:!border-[#8b1e1e] relative z-10">
+                <Button onClick={() => setDelModal(true)} type="button" extraClass="!flex !bg-black !border-black !items-center !gap-2 !px-4.5 !py-2 !mt-0 !w-auto !text-sm !font-medium hover:!bg-[#161616] hover:!border-[#8b1e1e] relative z-10">
                     <Trash2 className="w-4 h-4" /> Delete
                 </Button>
-                <Button onClick={() => navigate('update')} type="button" extraClass="!flex !items-center !gap-2 !px-4.5 !py-1.5 !mt-0 !w-auto !text-sm !font-medium hover:!bg-[#161616] relative z-10">
+                <Button onClick={() => navigate('update')} type="button" extraClass="!flex !items-center !gap-2 !px-4.5 !py-2 !mt-0 !w-auto !text-sm !font-medium hover:!bg-[#161616] relative z-10">
                     <Pencil className="w-4 h-4" /> Edit
                 </Button>
             </div>
