@@ -87,7 +87,7 @@ const Home = () => {
                       </div>
 
                       <h1
-                        className="sector-font text-6xl leading-[120%] tracking-[0.20em] text-[#c7c0b1]"
+                        className="sector-font text-6xl leading-[120%] tracking-[0.15em] text-[#c7c0b1]"
                         style={{
                           textShadow: glitch
                             ? "3px 0 rgba(192,57,43,0.9), -3px 0 rgba(60,200,255,0.6)"

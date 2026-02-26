@@ -1,5 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap');
 @import "tailwindcss";
+
+@font-face {
+  font-display: swap;
+  font-family: 'Bebas Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/bebas-neue-v16-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url('assets/fonts/space-mono-v17-latin-regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-display: swap;
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: url('assets/fonts/space-mono-v17-latin-700.woff2') format('woff2');
+}
 
 .sector-font {
   font-family: 'Bebas Neue', sans-serif;

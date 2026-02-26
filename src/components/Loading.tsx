@@ -5,7 +5,7 @@ interface LoadingProps {
   speed?: number;
 }
 
-const Loading: React.FC<LoadingProps> = ({ size = 18, speed = 200 }) => {
+const Loading: React.FC<LoadingProps> = ({ size = 18, speed = 250 }) => {
   const [dots, setDots] = useState(0);
 
   useEffect(() => {
